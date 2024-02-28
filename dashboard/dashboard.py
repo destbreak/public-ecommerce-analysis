@@ -24,7 +24,7 @@ with tab1:
     with st.container(): 
         # Jenis Produk
         product_category = products.product_category_name_english.value_counts()
-        colors = ['#329932','#999999','#999999','#999999','#999999','#999999','#999999']
+        colors = ['#329932','#999999','#999999','#999999','#999999','#999999','#999999','#999999','#999999','#999999']
 
         st.subheader('10 Kategori Produk yang banyak dijual')
         fig_product_category = plt.figure(figsize=(12.8, 9.6))
@@ -36,9 +36,8 @@ with tab1:
         with st.expander('Hasil Analisa'): 
             st.write(
                 """
-                1. Jenis produk yang dijual di E-Commerce ada 7 macam, yaitu: Cool Stuff, Pet Shop, Consoles Games, Market Place, Audio, DVD Blu-ray, dan La Cuisine.
-                2. Produk yang paling banyak dijual adalah barang-barang unik (cool stuff) yaitu sebanyak 789 barang.
-                3. Produk yang paling sedikit dijual adalah makanan (la cuisine) yaitu sebanyak 10 barang.
+                1. Jenis produk yang dijual di E-Commerce ada 71 macam.
+                2. Produk yang paling banyak dijual adalah furnitur (bed bath table) yaitu sebanyak 3029 barang.
                 """
             )
 
