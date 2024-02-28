@@ -26,9 +26,9 @@ with tab1:
         product_category = products.product_category_name_english.value_counts()
         colors = ['#329932','#999999','#999999','#999999','#999999','#999999','#999999']
 
-        st.subheader('Produk yang dijual di E-Commerce')
+        st.subheader('10 Kategori Produk yang banyak dijual')
         fig_product_category = plt.figure(figsize=(12.8, 9.6))
-        sns.barplot(x=product_category.index, y=product_category, palette=colors)
+        sns.barplot(x=product_category[:10], y=product_category.index[:10], palette=colors)
         plt.xlabel('Jenis Produk')
         plt.ylabel('Jumlah')
 
@@ -48,7 +48,7 @@ with tab2:
         payment_type = payments.payment_type.value_counts()
         colors = ['#329932','#999999','#999999','#999999']
 
-        st.subheader('Metode Pembayaran yang digunakan ketika transaksi di e-commerce')
+        st.subheader('Metode Pembayaran yang sering dipakai')
         fig_payment_type = plt.figure(figsize=(12.8, 9.6))
         sns.barplot(x=payment_type.index[:4], y=payment_type[:4], palette=colors)
         plt.xlabel('Metode Pembayaran')
@@ -68,7 +68,7 @@ with tab2:
         payment_installments = payments.payment_installments.value_counts().sort_index()
         colors = ['#329932','#999999','#999999','#999999','#999999','#999999','#999999','#999999','#999999','#999999','#999999','#999999']
 
-        st.subheader('Skema cicilan yang digunakan dalam transaksi di e-commerce\n(kurun waktu 1-12 bulan)')
+        st.subheader('Skema Cicilan yang sering digunakan\n(kurun waktu 1-12 bulan)')
         fig_payment_installments = plt.figure(figsize=(12.8, 9.6))
         sns.barplot(x=payment_installments.index[1:13], y=payment_installments[1:13], palette=colors)
         plt.xlabel('Skema Cicilan (x bulan)')
@@ -90,7 +90,7 @@ with tab3:
         city_customers = geo_customers.customer_city.value_counts()
         colors = ['#329932','#999999','#999999','#999999','#999999','#999999','#999999','#999999','#999999','#999999']
 
-        st.subheader('10 Kota Pembeli banyak berasal')
+        st.subheader('10 Kota dengan asal Pembeli terbanyak')
         fig_city_customers = plt.figure(figsize=(12.8, 9.6))
         sns.barplot(x=city_customers, y=city_customers.index, palette=colors)
         plt.xlabel('Jumlah')
@@ -143,7 +143,7 @@ with tab4:
         city_sellers = geo_sellers.seller_city.value_counts()
         colors = ['#329932','#999999','#999999','#999999','#999999','#999999','#999999','#999999','#999999','#999999']
 
-        st.subheader('10 Kota Penjual banyak berasal')
+        st.subheader('10 Kota dengan asal Penjual terbanyak')
         fig_city_sellers = plt.figure(figsize=(12.8, 9.6))
         sns.barplot(x=city_sellers, y=city_sellers.index, palette=colors)
         plt.xlabel('Jumlah')
